@@ -95,6 +95,8 @@ function M.config()
     local opts = {
       on_attach = M.on_attach,
       capabilities = M.common_capabilities(),
+      -- Automatically format on save
+      autoformat = false,
     }
 
     local require_ok, settings = pcall(require, "user.lspsettings." .. server)
