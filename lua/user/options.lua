@@ -52,4 +52,4 @@ vim.cmd [[set iskeyword+=-]]
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
 vim.g.editorconfig = false -- https://neovim.io/doc/user/editorconfig.html
-
+vim.g.disable_autoformat = true

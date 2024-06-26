@@ -69,7 +69,7 @@ function M.config()
 
   local servers = {
     "lua_ls",
-    "pylsp",
+    "pyright",
     "bashls",
     "jsonls",
     "yamlls",

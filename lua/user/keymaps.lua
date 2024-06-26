@@ -1,6 +1,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
-local utils = require("user.functions")
+local utils = require "user.functions"
 
 keymap("n", "<Space>", "", opts)
 vim.g.mapleader = ","
@@ -44,8 +44,7 @@ keymap({ "n", "x" }, "j", "gj", opts)
 keymap({ "n", "x" }, "k", "gk", opts)
 keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
 
-
-vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
+vim.api.nvim_set_keymap("t", "<C-;>", "<C-\\><C-n>", opts)
 
 -- move over a closing element in insert mode
 keymap("i", "<C-l>", function()
@@ -97,4 +96,20 @@ keymap(
 )
 keymap("n", "<leader>ks", "<cmd>SymbolsOutline<cr>", { desc = "Toggle SymbolsOutline" })
 keymap("n", "<leader>kS", "<cmd>windo set scb!<cr>", { desc = "Toggle Scrollbind" })
+keymap("", "<leader>cf", function()
+  require("conform").format { async = true, lsp_fallback = true }
+end, { desc = "Format" })
+
+keymap("", "<leader>agg", ":Gen Generate<cr>", { desc = "Generate" })
+keymap("",  "<leader>agc", ":Gen Chat<cr>", { desc = "Chat" })
+keymap("v",  "<leader>ags", ":Gen Summarize<cr>", { desc = "Summarize" })
+keymap("v",  "<leader>aga", ":Gen Ask<cr>", { desc = "Ask" })
+keymap("v",  "<leader>age", ":Gen Explain<cr>", { desc = "Explain Code" })
+keymap("v",  "<leader>att", ":Gen Change<cr>",  { desc = "Change Text" })
+keymap("v",  "<leader>atg", ":Gen Enhance_Grammar_Spelling<cr>",  { desc = "Enhance Grammar and Spelling" })
+keymap("v",  "<leader>atw", ":Gen Enhance_Wording<cr>",  { desc = "Enhance Wording" })
+keymap("v",  "<leader>atc", ":Gen Make_Concise<cr>",  { desc = "Make Concise" })
+keymap("v",  "<leader>acr", ":Gen Review_Code<cr>",  { desc = "Review Code" })
+keymap("v",  "<leader>ace", ":Gen Enhance_Code<cr>",  { desc = "Enhance Code" })
+keymap("v",  "<leader>acc", ":Gen Change_Code<cr>",  { desc = "Change Code" })
 
