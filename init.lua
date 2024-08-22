@@ -35,3 +35,4 @@ spec "user.spectre"
 spec "user.gen-nvim"
 spec "user.conform"
 require "user.lazy"
+
