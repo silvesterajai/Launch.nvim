@@ -101,3 +101,4 @@ keymap("", "<leader>cf", function()
   require("conform").format { async = true, lsp_fallback = true }
 end, { desc = "Format" })
 
+keymap("n", "<leader>cc", "<cmd>cclose<cr>", { desc = "Close quickfix" })
